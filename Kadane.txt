@@ -1,0 +1,24 @@
+ long maxSubarraySum(int arr[], int n){
+        int ctr=0;
+        int maxi=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+            if(arr[i]<0){
+                ctr++;
+            }
+            maxi=Math.max(maxi,arr[i]);
+        }
+        if(ctr==n){
+            return maxi;
+        }
+        long maxsum=0,sum=0;
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+            maxsum=Math.max(maxsum,sum);
+            if(sum<0){
+                sum=0;
+            }
+        }
+        return maxsum;
+        
+    }
+   

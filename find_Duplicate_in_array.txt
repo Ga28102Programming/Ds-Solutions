@@ -1,3 +1,4 @@
+// Find the duplicate element in array of n+1 element (only one element which is repeating )
 
     public int findDuplicate(int[] nums) {
         int slow=nums[0];

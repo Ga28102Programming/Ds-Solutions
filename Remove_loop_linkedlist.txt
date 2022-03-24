@@ -1,0 +1,27 @@
+  public static void removeLoop(Node head){
+        // code here
+        // remove the loop without losing any nodes
+        Node slow=head;
+        Node fast=head.next;
+        while(fast!=null && fast.next!=null && slow!=fast){
+            slow=slow.next;
+            fast=fast.next.next; 
+        }
+        if(slow!=fast){
+            return ;
+        }
+        slow=head;
+        fast=fast.next;
+        while(slow!=null && fast!=null && slow!=fast){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        Node cur=slow;
+        while(cur.next!=slow){
+            cur=cur.next;
+        }
+        cur.next=null;
+        return ;
+          
+    }
+    
